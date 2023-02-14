@@ -1,0 +1,6 @@
+site_name: Syfala workshop @ CCRMA
+theme: simple-blog
+nav:
+  - Home: index.md 
+  - About: about.md 
+  - Resources: resources.md
