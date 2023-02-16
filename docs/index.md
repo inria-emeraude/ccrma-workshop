@@ -39,7 +39,7 @@ Participants should bring their own laptop. The following elements - which can b
 
 ### Software
 
-During the workshop, we will extensively use the **Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](resources.md):
+During the workshop, we will extensively use the **Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md):
 
 - Ubuntu 18.04 LTS, 20.04 LTS or 22.04 LTS
 - a priori, ça doit pouvoir le faire aussi avec Linux Mint (**TODO**)
