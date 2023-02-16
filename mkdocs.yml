@@ -1,6 +1,5 @@
-site_name: Syfala workshop @ CCRMA
-theme: simple-blog
+site_name: Real-time Audio DSP on FPGA @ CCRMA
+theme: bootstrap4
 nav:
   - Home: index.md 
-  - About: about.md 
   - Resources: resources.md

@@ -21,10 +21,30 @@ By the end of the workshop, you should have a good understanding of the possibil
 - [Maxime Popoff](mailto:maxime.popoff@insa-lyon.fr)
 - [Pierre Cochard](mailto:pierre.cochard@inria.fr) -- Research engineer, team Emeraude -- INRIA Lyon (France)
 
-## Lab Kit
+Feel free to contact us for any additional information !
 
-The workshop registration fee includes a $... lab kit containing all the required elements (i.e., Digilent Zybo Z7-XX ARM/FPGA SoC Development Board, ...) to
+## Requirements
 
-## Additional Information
+This workshop is intended for musicians, makers, engineers, computer  scientists, etc. Previous background in computer programming and sound synthesis/processing is preferred.
 
-This workshop is intended for musicians, makers, engineers, computer  scientists, etc. Previous background in computer programming and sound synthesis/processing is preferred. Participants should bring their own laptop. Feel free to contact the workshop instructors for additional information.
+### Hardware 
+
+Participants should bring their own laptop. The following elements - which can be purchased for them and added to the registration fee - are also required for the workshop: 
+
+- a **Digilent Zybo Z7-XX** ARM/FPGA SoC Development Board [LAQUELLE?]
+  - an external 5V / 1.25A **power source**
+  - a **microUSB-USB cable**
+  - a 4GB (minimum) **micro SD card** required for the embedded Linux 
+- an **USB-MIDI controller**, with at least a few knobs and keys or pads.
+
+### Software
+
+During the workshop, we will extensively use the **Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](resources.md):
+
+- Ubuntu 18.04 LTS, 20.04 LTS or 22.04 LTS
+- a priori, ça doit pouvoir le faire aussi avec Linux Mint (**TODO**)
+
+For any **other operating system** (including other Linux distributions, but also macOS or Windows), **a container-image can be provided**, it will require the installation of an **OCI-compliant software** on your machine, such as:
+
+-  **podman** (multi-platform, installation instructions are available [here](https://podman.io/getting-started/installation))
+- **docker** (multi-platform, installation instructions are available [here](https://docs.docker.com/get-docker/))
