@@ -14,7 +14,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Installing syfala - Real-time Audio DSP on FPGA @ CCRMA</title>
+        <title>Installing syfala on Ubuntu - Real-time Audio DSP on FPGA @ CCRMA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -74,48 +74,49 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
-    <li class="breadcrumb-item active" aria-current="page">Installing syfala</li>
+    <li class="breadcrumb-item active" aria-current="page">Installing syfala on Ubuntu</li>
   </ol>
 </nav>
 
 
-<h1 id="installing-syfala">Installing syfala</h1>
+<h1 id="installing-syfala-on-ubuntu">Installing syfala on Ubuntu</h1>
 <p>The Syfala toolchain is a compilation toolchain of Faust programs onto Xilinx FPGA targets. This document explains how to install and run the <strong>version 7</strong> of the toolchain on a Linux machine. In practice, installing the Syfala toolchain means:</p>
 <ul>
-<li>Installing the required <strong>linux-packages</strong>, depending on your Linux distribution.</li>
+<li>Installing the required <strong>linux-packages</strong></li>
 <li>Installing the <strong>Faust</strong> compiler</li>
 <li>Creating a <strong>AMD/Xilinx account</strong> and downloading/installing the <strong>2022.2 version</strong> of the Xilinx toolchain (providing softwares such as Vivado, Vitis, Vitis HLS).</li>
 <li>Installing the additionnal <strong>Vivado Board Files</strong> for Digilent Boards.</li>
 <li>Installing <em>udev</em> rules in order to use the JTAG connection.</li>
-<li>Cloning the <strong>Syfala repository</strong>, and running a <strong>simple example</strong> to make sure everything's working properly.</li>
+<li>Cloning the <strong>Syfala repository</strong>, and running a <strong>simple example</strong> to make sure everything is working properly.</li>
 </ul>
-<h2 id="linux-targets">Linux targets</h2>
-<h3 id="ubuntu-dependencies">Ubuntu dependencies</h3>
-<pre><code class="language-shell">sudo apt install libncurses5 libtinfo-dev g++-multilib gtk2.0
+<h2 id="dependencies">Dependencies</h2>
+<h3 id="packages">Packages</h3>
+<pre><code class="language-shell">$ sudo apt-get update
+$ sudo apt-get install libncurses5 libtinfo-dev g++-multilib gtk2.0
 </code></pre>
-<h2 id="faust">Faust</h2>
-<p>It is recommended to clone Faust from the official github repository: https://github.com/grame-cncm/faust</p>
-<pre><code class="language-shell">git clone https://github.com/grame-cncm/faust.git 
-cd faust
-make
-sudo make install
+<h3 id="faust">Faust</h3>
+<p>It is recommended to clone Faust from the official <a href="https://github.com/grame-cncm/faust">github repository</a>:</p>
+<pre><code class="language-shell">$ git clone https://github.com/grame-cncm/faust.git 
+$ cd faust
+$ make
+$ sudo make install
 </code></pre>
 <h2 id="vivado-vitis-vitis-hls-20222-version">Vivado, Vitis &amp; Vitis HLS (2022.2 version)</h2>
 <ul>
 <li>
-<p>Open an account on https://www.xilinx.com/registration</p>
+<p>Open an account on <a href="https://www.xilinx.com/registration">https://www.xilinx.com/registration</a></p>
 </li>
 <li>
-<p>The Xilinx download page (https://www.xilinx.com/support/download.html) contains links for downloading the "Vivado Design Suite - HLx Editions - Full Product". It is available for both Linux and Windows. </p>
+<p>The Xilinx download page (<a href="https://www.xilinx.com/support/download.html">https://www.xilinx.com/support/download.html</a>) contains links for downloading the "Vivado Design Suite - HLx Editions - Full Product". It is available for both Linux and Windows. </p>
 </li>
 <li>
-<p>Download the Linux installer <code>Xilinx_Unified_2022.2_1118_1232_Lin64.bin</code></p>
+<p>Download the Linux installer <code>Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
 </li>
 <li>
-<p>execute <code>chmod a+x Xilinx_Unified_2022.2_1118_1232_Lin64.bin</code></p>
+<p>execute <code>chmod a+x Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
 </li>
 <li>
-<p>execute <code>./Xilinx_Unified_2022.2_1118_1232_Lin64.bin</code></p>
+<p>execute <code>./Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
 </li>
 <li>
 <p>We suggest to use the "Download Image (Install Separately)" option. It creates a directory with a xsetup file to execute that you can reuse in case of failure during the installation</p>
@@ -134,11 +135,9 @@ sudo make install
 <li>
 <p>Setup a shell function allowing to use the tools when necessary (add this to your <code>~/.bashrc</code>, <code>~/.zshrc</code> or whatever you're currently using, replacing <code>$XILINX_ROOT_DIR</code> by the directory you chose to install all the tools)</p>
 </li>
-<li>
-<p><code>shell
-    export XILINX_ROOT_DIR=$HOME/Xilinx</code></p>
-</li>
 </ul>
+<p><code>shell
+  export XILINX_ROOT_DIR=$HOME/Xilinx</code></p>
 <h3 id="installing-cable-drivers-on-linux">Installing Cable Drivers on Linux</h3>
 <ul>
 <li>go to: <code>$XILINX_ROOT_DIR/Vivado/2022.2/data/xicom/cable_drivers/lin64/install_script/install_drivers</code> directory</li>
@@ -147,7 +146,7 @@ sudo make install
 </ul>
 <h3 id="installing-digilent-board-files">Installing Digilent Board Files</h3>
 <ul>
-<li>download https://github.com/Digilent/vivado-boards/archive/master.zip?_ga=2.76732885.1953828090.1655988025-1125947215.1655988024</li>
+<li>Download the board files <a href="https://github.com/Digilent/vivado-boards/archive/master.zip?_ga=2.76732885.1953828090.1655988025-1125947215.1655988024">here</a></li>
 <li>Open the folder extracted from the archive and navigate to its <code>new/board_files</code> folder. You will be copying all of this folder's subfolders</li>
 <li>go to <code>$XILINX_ROOT_DIR/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx</code></li>
 <li><strong>Copy</strong> all of the folders found in vivado-boards <code>new/board_files</code>folder and <strong>paste</strong> them into this folder</li>
@@ -188,12 +187,9 @@ syfala --help
 
     <div id="toc-collapse" class="navbar-collapse collapse card">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a class="nav-link" href="#installing-syfala">Installing syfala</a></li>
+            <li class="nav-item main"><a class="nav-link" href="#installing-syfala-on-ubuntu">Installing syfala on Ubuntu</a></li>
                 <li class="nav-item">
-                    <a href="#linux-targets" class="nav-link">Linux targets</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#faust" class="nav-link">Faust</a>
+                    <a href="#dependencies" class="nav-link">Dependencies</a>
                 </li>
                 <li class="nav-item">
                     <a href="#vivado-vitis-vitis-hls-20222-version" class="nav-link">Vivado, Vitis &amp; Vitis HLS (2022.2 version)</a>

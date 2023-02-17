@@ -8,7 +8,7 @@ However, programming them is extremely complex and out of reach to non-specializ
 
 **Programming FPGAs with Faust** (which is an accessible programming language for real-time sound synthesis and audio processing) will allow you to explore new audio DSP applications potentially involving hundreds of audio channels, ultra-low audio latency, etc.
 
-Using a **Zybo ARM/FPGA SoC Development Board** which will be provided to you as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded Linux environment offering the unmatched performances of an FPGA.
+Using a **Zybo ARM/FPGA SoC Development Board** which can be provided to you as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded Linux environment offering the unmatched performances of an FPGA.
 
 ## Covered topics
 During this course, as an introduction to FPGAs, we will first describe in details **the ins and outs of this platform**: how they work, their general purpose, and why they are a great fit for audio hardware and software development.
@@ -31,7 +31,7 @@ This workshop is intended for musicians, makers, engineers, computer  scientists
 
 Participants should bring their own laptop. The following elements - which can be purchased for them and added to the registration fee - are also required for the workshop: 
 
-- a **Digilent Zybo Z7-XX** ARM/FPGA SoC Development Board [LAQUELLE?]
+- a **Digilent Zybo Z7-10 or Z7-20** ARM/FPGA SoC Development Board
   - an external 5V / 1.25A **power source**
   - a **microUSB-USB cable**
   - a 4GB (minimum) **micro SD card** required for the embedded Linux 
@@ -39,10 +39,10 @@ Participants should bring their own laptop. The following elements - which can b
 
 ### Software
 
-During the workshop, we will extensively use the **Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md):
+During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md):
 
-- Ubuntu 18.04 LTS, 20.04 LTS or 22.04 LTS
-- a priori, ça doit pouvoir le faire aussi avec Linux Mint (**TODO**)
+- **Ubuntu** >= 18.04
+- **Linux Mint** >= 19 
 
 For any **other operating system** (including other Linux distributions, but also macOS or Windows), **a container-image can be provided**, it will require the installation of an **OCI-compliant software** on your machine, such as:
 
