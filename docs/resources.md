@@ -1,4 +1,4 @@
-- [Installing syfala and the Xilinx 2022.2 toolchain](syfala-installation.md) (Ubuntu operating systems only)
-- Running and using the syfala container (other operating systems) [**TODO**]
-- Using syfala [**TODO**]
-- 
+- [Installing syfala and the Xilinx 2022.2 toolchain](syfala-installation.md) (**debian-based operating systems only**)
+- [Running and using the syfala container](using-syfala-containers.md) (other operating systems)
+- [Getting started with syfala](syfala-getting-started.md)
+- [Syfala reference](syfala-reference.md) 
