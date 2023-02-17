@@ -32,7 +32,7 @@ This workshop is intended for musicians, makers, engineers, computer  scientists
 Participants should bring their own laptop. The following elements - which can be purchased for them and added to the registration fee - are also required for the workshop: 
 
 - a **Digilent Zybo Z7-10 or Z7-20** ARM/FPGA SoC Development Board
-  - an external 5V / 1.25A **power source**
+  - an external 4.5 to 5.5V / 2.5A+ **power source**
   - a **microUSB-USB cable**
   - a 4GB (minimum) **micro SD card** required for the embedded Linux 
 - an **USB-MIDI controller**, with at least a few knobs and keys or pads.

@@ -80,11 +80,11 @@
 
 
 <h1 id="installing-syfala-on-ubuntu">Installing syfala on Ubuntu</h1>
-<p>The Syfala toolchain is a compilation toolchain of Faust programs onto Xilinx FPGA targets. This document explains how to install and run the <strong>version 7</strong> of the toolchain on a Linux machine. In practice, installing the Syfala toolchain means:</p>
+<p>The Syfala toolchain is a compilation toolchain of Faust programs onto AMD-Xilinx FPGA targets. This document explains how to install and run the <strong>version 0.7.1</strong> of the toolchain on a Linux machine. In practice, installing the Syfala toolchain means:</p>
 <ul>
 <li>Installing the required <strong>linux-packages</strong></li>
 <li>Installing the <strong>Faust</strong> compiler</li>
-<li>Creating a <strong>AMD/Xilinx account</strong> and downloading/installing the <strong>2022.2 version</strong> of the Xilinx toolchain (providing softwares such as Vivado, Vitis, Vitis HLS).</li>
+<li>Creating a <strong>AMD-Xilinx account</strong> and downloading/installing the <strong>2022.2 version</strong> of the AMD-Xilinx toolchain (providing softwares such as Vivado, Vitis, Vitis HLS).</li>
 <li>Installing the additionnal <strong>Vivado Board Files</strong> for Digilent Boards.</li>
 <li>Installing <em>udev</em> rules in order to use the JTAG connection.</li>
 <li>Cloning the <strong>Syfala repository</strong>, and running a <strong>simple example</strong> to make sure everything is working properly.</li>
@@ -103,18 +103,14 @@ $ sudo make install
 </code></pre>
 <h2 id="vivado-vitis-vitis-hls-20222-version">Vivado, Vitis &amp; Vitis HLS (2022.2 version)</h2>
 <ul>
-<li>
-<p>Open an account on <a href="https://www.xilinx.com/registration">https://www.xilinx.com/registration</a></p>
-</li>
+<li>Open an account on <a href="https://www.xilinx.com/registration">https://www.xilinx.com/registration</a></li>
 <li>
 <p>The Xilinx download page (<a href="https://www.xilinx.com/support/download.html">https://www.xilinx.com/support/download.html</a>) contains links for downloading the "Vivado Design Suite - HLx Editions - Full Product". It is available for both Linux and Windows. </p>
 </li>
 <li>
 <p>Download the Linux installer <code>Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
 </li>
-<li>
-<p>execute <code>chmod a+x Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
-</li>
+<li>execute <code>chmod a+x Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></li>
 <li>
 <p>execute <code>./Xilinx_Unified_2022.2_1014_8888_Lin64.bin</code></p>
 </li>
@@ -129,15 +125,10 @@ $ sudo make install
 </li>
 <li>It will need 110GB of disk space: if you uncheck <em>Ultrascale</em>, <em>Ultrascale+</em>, <em>Versal ACAP</em> and <em>Alveo acceleration platform</em>, it will use less space and still work.</li>
 <li>Agree with everything and choose a directory to install (e.g. ~/Xilinx)</li>
-<li>
-<p>Install and wait for hours...</p>
-</li>
-<li>
-<p>Setup a shell function allowing to use the tools when necessary (add this to your <code>~/.bashrc</code>, <code>~/.zshrc</code> or whatever you're currently using, replacing <code>$XILINX_ROOT_DIR</code> by the directory you chose to install all the tools)</p>
-</li>
+<li>Install and wait for hours...</li>
+<li>Setup a shell environment variable allowing to use the tools when necessary (add this to your <code>~/.bashrc</code>, <code>~/.zshrc</code> or whatever you're currently using, replacing <code>$HOME/Xilinx</code> by the directory you chose to install all the tools) </li>
+<li><code>export XILINX_ROOT_DIR=$HOME/Xilinx</code></li>
 </ul>
-<p><code>shell
-  export XILINX_ROOT_DIR=$HOME/Xilinx</code></p>
 <h3 id="installing-cable-drivers-on-linux">Installing Cable Drivers on Linux</h3>
 <ul>
 <li>go to: <code>$XILINX_ROOT_DIR/Vivado/2022.2/data/xicom/cable_drivers/lin64/install_script/install_drivers</code> directory</li>
@@ -153,10 +144,10 @@ $ sudo make install
 </ul>
 <h2 id="cloning-the-syfala-repository">Cloning the Syfala repository</h2>
 <p>To clone and install the latest stable version of the Syfala toolchain, you can use the following commands:</p>
-<pre><code class="language-shell">git clone https://github.com/inria-emeraude/syfala 
-cd syfala
-./syfala.tcl install
-syfala --help
+<pre><code class="language-shell">$ git clone https://github.com/inria-emeraude/syfala 
+$ cd syfala
+$ ./syfala.tcl install
+$syfala --help
 </code></pre>
 <p>In order to use the Syfala toolchain to compile your first example, please report to the main <a href="https://github.com/inria-emeraude/syfala/blob/main/README.md">README</a> file located in the repository's root directory.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
