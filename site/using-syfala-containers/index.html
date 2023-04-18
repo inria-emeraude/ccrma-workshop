@@ -96,19 +96,19 @@ WARN[0000] Found no GID ranges set aside for user &quot;user&quot; in /etc/subgi
 $ sudo echo &quot;user:10000:65536&quot; &gt;&gt; /etc/subgid
 </code></pre>
 <h3 id="importing-image">Importing image</h3>
-<p>The image is a directory with a specific structure, it is named <code>x2022-ubuntu1804</code> in our case.</p>
+<p>The image is a .tar file with a specific structure, it is named <code>syfala-debian.tar</code> in our case.</p>
 <pre><code class="language-shell">$ cd /path/to/parent/directory/of/image
 # import image (make sure you have 100+gb of space left on your machine)
-$ podman pull oci:x2022-ubuntu1804
+$ podman load -i syfala-debian.tar
 </code></pre>
 <h3 id="running-container">Running container</h3>
 <h4 id="without-display">without display</h4>
-<pre><code class="language-shell">$ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+<pre><code class="language-shell">$ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z syfala-debian /bin/bash 
 </code></pre>
 <h4 id="with-display-required-for-vivadovitis-gui-and-for-the-faust-uart-gui-application">with display (required for Vivado/Vitis GUI, and for the Faust UART GUI application):</h4>
 <pre><code class="language-shell"># first, allow X11 to share displays with local processes
 $ xhost +local:
-$ podman run -ti --user=syfala --network=host --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:z -v /dev/dri:/dev/dri:z -v /dev/bus/usb:/dev/bus/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+$ podman run -ti --user=syfala --network=host --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:z -v /dev/dri:/dev/dri:z -v /dev/bus/usb:/dev/bus/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z syfala-debian /bin/bash 
 # once inside the container, you'll have to run:
 $ xhost +
 # you can now open vitis_hls, vivado, etc.
@@ -127,11 +127,6 @@ $ xhost +
 <li><code>-v /dev/ttyUSB1:/dev/ttyUSB1</code> - needed in order to use the Faust GUI-UART application </li>
 <li><code>x2022-ubuntu1804-ctn</code> - the name of the container you spawned from the image</li>
 <li><code>bash</code> - it will open a bash session when accessing the container, you can replace that by any binary that you want to start</li>
-</ul>
-<h3 id="todos">TODOs:</h3>
-<ul>
-<li>[ ] macOS support through VNC (or XQuartz ?)</li>
-<li>[ ] Windows support?</li>
 </ul>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
@@ -171,9 +166,6 @@ $ xhost +
                 </li>
                 <li class="nav-item">
                     <a href="#notes" class="nav-link">Notes:</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#todos" class="nav-link">TODOs:</a>
                 </li>
         </ul>
     </div>
