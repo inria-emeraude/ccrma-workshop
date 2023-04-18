@@ -61,7 +61,7 @@ Participants should bring their own laptop. The following elements -  which can 
 
 ### Software
 
-During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior  to the workshop, following the instructions provided [here](file:///home/pierre/Téléchargements/syfala-installation/):
+During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior  to the workshop, following the instructions provided [here](syfala-installation.md):
 
 - **Ubuntu** >= 18.04
 - **Linux Mint** >= 19 
