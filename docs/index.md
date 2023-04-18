@@ -61,12 +61,11 @@ Participants should bring their own laptop. The following elements -  which can 
 
 ### Software
 
-During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior  to the workshop, following the instructions provided [here](syfala-installation.md):
+During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have a **debian-based** operating system (Ubuntu, Linux Mint...) already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md):
 
-- **Ubuntu** >= 18.04
-- **Linux Mint** >= 19 
-
-For any **other operating system** (including other Linux distributions, but also macOS or Windows), **a container-image can be provided**, it will require the installation of an **OCI-compliant software** on your machine, such as:
+For **any other Linux distributions**, but also *macOS* (**x86**), a container-image can be provided, it will **require the installation of one of these two softwares**: 
 
 - **podman** (multi-platform, installation instructions are available [here](https://podman.io/getting-started/installation))
 - **docker** (multi-platform, installation instructions are available [here](https://docs.docker.com/get-docker/))
+
+Unfortunately, **syfala containers** are at the moment **not working on ARM-based macOS** systems, and have **not been tested on Windows**.
