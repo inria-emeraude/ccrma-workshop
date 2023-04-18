@@ -14,7 +14,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Resources - Real-time Audio DSP on FPGA @ CCRMA</title>
+        <title>Using syfala containers - Real-time Audio DSP on FPGA @ CCRMA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -50,8 +50,8 @@
               <li >
                 <a class="nav-link" href="..">Home</a>
               </li>
-              <li class="active">
-                <a class="nav-link" href="./">Resources</a>
+              <li >
+                <a class="nav-link" href="../resources/">Resources</a>
               </li>
             </ul>
           </nav>
@@ -74,16 +74,64 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
-    <li class="breadcrumb-item active" aria-current="page">Resources</li>
+    <li class="breadcrumb-item active" aria-current="page">Using syfala containers</li>
   </ol>
 </nav>
 
 
+<h1 id="using-syfala-containers">Using syfala containers</h1>
+<h3 id="installing-podman">Installing podman</h3>
 <ul>
-<li><a href="../syfala-installation/">Installing syfala and the Xilinx 2022.2 toolchain</a> (<strong>debian-based operating systems only</strong>)</li>
-<li><a href="../using-syfala-containers/">Running and using the syfala container</a> (other operating systems)</li>
-<li><a href="../syfala-getting-started/">Getting started with syfala</a></li>
-<li><a href="../syfala-reference/">Syfala reference</a> </li>
+<li>Archlinux: <code>yay -S podman</code></li>
+<li>Ubuntu: <code>sudo apt install podman</code></li>
+<li>macOS: <code>brew install podman</code></li>
+</ul>
+<p>If shell shows these kind of errors: </p>
+<pre><code class="language-shell">WARN[0000] Reading allowed ID mappings: reading subuid mappings for user &quot;user&quot; and subgid mappings for group &quot;user&quot;: no subuid ranges found for user &quot;user&quot; in /etc/subuid
+WARN[0000] Found no UID ranges set aside for user &quot;user&quot; in /etc/subuid.
+WARN[0000] Found no GID ranges set aside for user &quot;user&quot; in /etc/subgid.
+</code></pre>
+<p>do this (replace <code>user</code> by your username):</p>
+<pre><code class="language-shell">$ sudo echo &quot;user:10000:65536&quot; &gt;&gt; /etc/subuid
+$ sudo echo &quot;user:10000:65536&quot; &gt;&gt; /etc/subgid
+</code></pre>
+<h3 id="importing-image">Importing image</h3>
+<p>The image is a directory with a specific structure, it is named <code>x2022-ubuntu1804</code> in our case.</p>
+<pre><code class="language-shell">$ cd /path/to/parent/directory/of/image
+# import image (make sure you have 100+gb of space left on your machine)
+$ podman pull oci:x2022-ubuntu1804
+</code></pre>
+<h3 id="running-container">Running container</h3>
+<h4 id="without-display">without display</h4>
+<pre><code class="language-shell">$ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+</code></pre>
+<h4 id="with-display-required-for-vivadovitis-gui-and-for-the-faust-uart-gui-application">with display (required for Vivado/Vitis GUI, and for the Faust UART GUI application):</h4>
+<pre><code class="language-shell"># first, allow X11 to share displays with local processes
+$ xhost +local:
+$ podman run -ti --user=syfala --network=host --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:z -v /dev/dri:/dev/dri:z -v /dev/bus/usb:/dev/bus/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+# once inside the container, you'll have to run:
+$ xhost +
+# you can now open vitis_hls, vivado, etc.
+</code></pre>
+<h4 id="running-with-chroot-permissions-to-build-the-alpine-linux-rootfs">running with chroot permissions to build the alpine-linux rootfs</h4>
+<p>you'll just have to add <code>--privileged</code> to the <code>podman run [...]</code> command.</p>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li><code>-ti</code> = <code>--tty + --interactive</code></li>
+<li><code>--user=syfala</code> - means you connect to the container as the user <code>syfala</code> (already registered), you can change that to <code>user=root</code> if needed.</li>
+<li><code>--network=host</code> - not really sure yet why it's needed...</li>
+<li><code>--env DISPLAY=$DISPLAY</code> - needed to share your X11 display ID</li>
+<li><code>-v /tmp/.X11-unix:/tmp/.X11-unix:z</code> - needed to share your X11 display</li>
+<li><code>-v /dev/dri:/dev/dri:z</code> - same</li>
+<li><code>-v /dev/usb:/dev/usb</code> - needed in order to flash bitstream &amp; application</li>
+<li><code>-v /dev/ttyUSB1:/dev/ttyUSB1</code> - needed in order to use the Faust GUI-UART application </li>
+<li><code>x2022-ubuntu1804-ctn</code> - the name of the container you spawned from the image</li>
+<li><code>bash</code> - it will open a bash session when accessing the container, you can replace that by any binary that you want to start</li>
+</ul>
+<h3 id="todos">TODOs:</h3>
+<ul>
+<li>[ ] macOS support through VNC (or XQuartz ?)</li>
+<li>[ ] Windows support?</li>
 </ul>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
@@ -111,6 +159,22 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card">
         <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a class="nav-link" href="#using-syfala-containers">Using syfala containers</a></li>
+                <li class="nav-item">
+                    <a href="#installing-podman" class="nav-link">Installing podman</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#importing-image" class="nav-link">Importing image</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#running-container" class="nav-link">Running container</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#notes" class="nav-link">Notes:</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#todos" class="nav-link">TODOs:</a>
+                </li>
         </ul>
     </div>
 </div></div>

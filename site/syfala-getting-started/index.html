@@ -14,7 +14,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Resources - Real-time Audio DSP on FPGA @ CCRMA</title>
+        <title>Syfala getting started - Real-time Audio DSP on FPGA @ CCRMA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -50,8 +50,8 @@
               <li >
                 <a class="nav-link" href="..">Home</a>
               </li>
-              <li class="active">
-                <a class="nav-link" href="./">Resources</a>
+              <li >
+                <a class="nav-link" href="../resources/">Resources</a>
               </li>
             </ul>
           </nav>
@@ -74,17 +74,53 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     
-    <li class="breadcrumb-item active" aria-current="page">Resources</li>
+    <li class="breadcrumb-item active" aria-current="page">Syfala getting started</li>
   </ol>
 </nav>
 
 
+<h2 id="getting-started">Getting started</h2>
+<h3 id="hardware-setup-digilent-zybo-z7-1020-boards">Hardware setup (Digilent <strong>Zybo-Z7-10/20</strong> boards)</h3>
 <ul>
-<li><a href="../syfala-installation/">Installing syfala and the Xilinx 2022.2 toolchain</a> (<strong>debian-based operating systems only</strong>)</li>
-<li><a href="../using-syfala-containers/">Running and using the syfala container</a> (other operating systems)</li>
-<li><a href="../syfala-getting-started/">Getting started with syfala</a></li>
-<li><a href="../syfala-reference/">Syfala reference</a> </li>
+<li>[ ] Jumper <strong>JP5</strong> should be on <em>JTAG</em> </li>
+<li>[ ] <strong>Power select</strong> jumper should be on <em>USB</em>  </li>
+<li>[ ] <strong>Switches</strong> SW0, SW1, SW2, SW3 should be <strong>down</strong>  </li>
+<li>[ ] The <strong>audio input</strong> is <strong>LINE IN</strong> (blue), not MIC IN  </li>
+<li>[ ] The <strong>audio output</strong> is the black <strong>HPH OUT</strong> jack  </li>
 </ul>
+<h3 id="software">Software</h3>
+<p>Building a simple example for the <strong>default board</strong> (Digilent Zybo <strong>Z7-10)</strong>:</p>
+<pre><code class="language-shell">$ syfala examples/virtualAnalog.dsp
+</code></pre>
+<p>This will run the <strong>full syfala toolchain</strong> on the virtualAnalog.dsp <strong>Faust</strong> file, which will then be ready to be flashed on the board. Y<strong>ou can specify the targeted board</strong> using the <code>-b (--board)</code> option:</p>
+<pre><code class="language-shell">$ syfala examples/virtualAnalog.dsp --board Z20
+$ syfala examples/virtualAnalog.dsp --board GENESYS
+</code></pre>
+<p>You can now <strong>connect the board</strong> to your computer with the proper <strong>USB/Serial port cable</strong> and run the <code>flash</code> command:</p>
+<pre><code class="language-shell">$ syfala flash
+</code></pre>
+<p>The board's <strong>RGB LED</strong> should then become <strong>green</strong> after a few seconds, indicating that your program is running. You can now <strong>start the Faust GUI application</strong>, which will display a set of sliders/knobs/buttons and <strong>update the DSP parameters in real-time through USB-UART</strong>:</p>
+<pre><code class="language-shell">$ syfala gui
+</code></pre>
+<h3 id="exporting-and-re-importing-your-builds">Exporting and re-importing your builds</h3>
+<p>When you're done playing with your program, you can <strong>save and export it</strong> as a <code>.zip</code> file with the following command:</p>
+<pre><code class="language-shell">$ syfala export my-virtual-analog-build
+# the exported .zip file is tagged with date &amp; time, e.g.:
+&gt;&gt; &quot;export/2022-02-17-my-virtual-analog-build.zip&quot;
+</code></pre>
+<p>The resulting <code>.zip</code> file is now available in the repository's <code>export</code> directory, you can <strong>re-import</strong> it by typing:</p>
+<pre><code class="language-shell">$ syfala import export/2022-02-17-my-virtual-analog-build.zip
+</code></pre>
+<h3 id="making-another-build">Making another build</h3>
+<p>Before building another DSP program, please <strong>make sure you have saved and exported your previous build</strong> beforehand, otherwise <strong>it will be overwritten</strong> whenever you start a new build. </p>
+<pre><code class="language-shell"># Clean build directory &amp; start another build:
+$ syfala clean
+$ syfala examples/my-new-dsp-build.dsp
+# Both commands can also be combined by adding the '--reset' flag 
+$ syfala examples/my-new-dsp-build.dsp --reset
+</code></pre>
+<h2 id="going-further">Going further</h2>
+<p>Please report to the <a href="../syfala-reference/">reference</a> for more information on available <strong>commands</strong>, <strong>options</strong> and documentation.</p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -111,6 +147,20 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card">
         <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a class="nav-link" href="#getting-started">Getting started</a></li>
+                <li class="nav-item">
+                    <a href="#hardware-setup-digilent-zybo-z7-1020-boards" class="nav-link">Hardware setup (Digilent Zybo-Z7-10/20 boards)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#software" class="nav-link">Software</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#exporting-and-re-importing-your-builds" class="nav-link">Exporting and re-importing your builds</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#making-another-build" class="nav-link">Making another build</a>
+                </li>
+            <li class="nav-item main"><a class="nav-link" href="#going-further">Going further</a></li>
         </ul>
     </div>
 </div></div>

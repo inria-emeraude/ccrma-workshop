@@ -79,27 +79,36 @@
 </nav>
 
 
-<h2 id="real-time-audio-dsp-on-fpga">Real-Time Audio DSP on FPGA</h2>
-<p>The goal of this hands-on workshop is to discover <strong>Syfala</strong>: the first open-source audio DSP compiler targeting <strong>FPGAs</strong> using the <strong>Faust programming language</strong>.</p>
-<p><em>Field-Programmable Gate Arrays</em> (FPGAs) provide unparalleled audio latency and computational power. This makes them a better fit for real-time audio processing than traditional CPUs for many applications.
-However, programming them is extremely complex and out of reach to non-specialized engineers as well as to most people in the audio community. That's where Faust comes to the rescue!</p>
-<p><strong>Programming FPGAs with Faust</strong> (which is an accessible programming language for real-time sound synthesis and audio processing) will allow you to explore new audio DSP applications potentially involving hundreds of audio channels, ultra-low audio latency, etc.</p>
-<p>Using a <strong>Zybo ARM/FPGA SoC Development Board</strong> which can be provided to you as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded Linux environment offering the unmatched performances of an FPGA.</p>
+<p><img src="banner50p.png" alt="banner" style="zoom:50%;" /></p>
+<h1 id="real-time-audio-dsp-on-fpga">Real-Time Audio DSP on FPGA</h1>
+<p>Have you ever wanted to take your <strong>embedded audio DSP projects</strong> to the next level?</p>
+<p>Imagine being able to benefit from <em>unparalleled audio latency performances</em> and <em>computational power</em>, all while using an <em>accessible programming language</em>. Or maybe you just want to be able to use a <em>huge number of microphones and speakers</em> with ultra-fast audio processing?</p>
+<p>Well, you're in luck! Come discover <strong><a href="https://github.com/inria-emeraude/syfala">Syfala</a></strong>: the first open-source audio DSP compiler targeting <strong>FPGAs</strong> using the <strong><a href="https://faust.grame.fr/">Faust programming language</a></strong>.</p>
+<p>We'll cover everything from the basics of FPGA programming to the  syntax and concepts to use Faust on an embedded platform. We'll show you how to create your own Faust DSP for real time audio processing, and  control it with a baremetal system or an embedded Linux.</p>
+<p>So come join us for this <strong>hands-on workshop</strong>! Let's explore the world of FPGAs together and see what amazing audio processing capabilities we can create!</p>
+<h2 id="description">Description</h2>
+<p><em>Field-Programmable Gate Arrays</em> (FPGAs) provide unparalleled <strong>audio latency</strong> and <strong>computational power</strong>. This makes them a better fit for real-time audio processing than traditional CPUs for many applications.</p>
+<p>These embedded platforms can easily handle DSPs with <em>thousand of channels</em> while guaranteeing <em>very low latency</em>. You can imagine some very advanced applications in <em>spatial audio, noise cancelling or active control of room acoustics</em>. For exemple, the combination of a large number of microphones and  speakers with ultra-fast audio processing could permit to actively  modify the acoustical properties of rehearsal spaces, concert halls,  etc., to make them sound like a cathedral or any famous venue in the  world.</p>
+<p>It also provides opportunities for new <em>musical discoveries and investigations</em>, like using very high audio sampling rate to generate digital oscillator, approximating analog.</p>
+<p>However, programming them is very <strong>complex</strong> and out of reach to non-specialized engineers as well as to most people in the audio community. That's where <strong>Faust</strong> comes to the rescue!</p>
+<p><strong>Faust</strong> is a <em>functional programming language</em>  for sound synthesis and audio processing with a strong focus on the  design of synthesizers, musical instruments, audio effects, etc.</p>
+<p><strong>Programming FPGAs with Faust</strong> will allow you to explore the power of FPGAs while leveraging an <em>accessible programming language</em> that's widely used within the audio community.</p>
+<p>Using a <strong>Zybo ARM/FPGA SoC Development Board</strong> which  can be provided to you as part of a lab kit, you will learn how to  easily program your own Faust audio signal processing applications on an embedded Linux environment offering the unmatched performances of an  FPGA.</p>
 <h2 id="covered-topics">Covered topics</h2>
-<p>During this course, as an introduction to FPGAs, we will first describe in details <strong>the ins and outs of this platform</strong>: how they work, their general purpose, and why they are a great fit for audio hardware and software development.
-We will dive in audio development on FPGAs using Syfala to <strong>compile our first baremetal audio programs from regular Faust DSP code</strong>. We will then generate a graphical user interface (GUI) to control it in real-time.
-Finally, we will demonstrate how to <strong>build and use a custom-made embedded Linux distribution directly on the board</strong>. This will allow us to use more advanced control protocols such as <strong>MIDI</strong>, Open Sound Control (<strong>OSC</strong>), <strong>HTTP</strong>, etc.</p>
-<p>By the end of the workshop, you should have a good understanding of the possibilities that such a platform affords in the context of real-time audio processing.</p>
+<p>During this course, as an introduction to FPGAs, we will first describe in details <strong>the ins and outs of this platform</strong>: how they work, their general purpose, and why they are a great fit for audio hardware and software development.</p>
+<p>We will dive in audio development on FPGAs using Syfala to <strong>compile our first baremetal audio programs from regular Faust DSP code</strong>. We will then generate a graphical user interface (GUI) to control it in real-time.</p>
+<p>Finally, we will demonstrate how to <strong>build and use a custom-made embedded Linux distribution directly on the board</strong>. This will allow us to use more advanced control protocols such as <strong>MIDI</strong>, Open Sound Control (<strong>OSC</strong>), <strong>HTTP</strong>, etc.</p>
+<p>By the end of the workshop, you should have a good understanding of  the possibilities that such a platform affords in the context of  real-time audio processing.</p>
 <h2 id="instructors">Instructors</h2>
 <ul>
-<li><a href="mailto:maxime.popoff@insa-lyon.fr">Maxime Popoff</a></li>
-<li><a href="mailto:pierre.cochard@inria.fr">Pierre Cochard</a> -- Research engineer, team Emeraude -- INRIA Lyon (France)</li>
+<li><a href="https://profiles.stanford.edu/maxime-popoff?releaseVersion=10.5.1">Maxime Popoff</a> -- Computer Science and Embedded Systems PhD Student, Emeraude Team -- INSA Lyon (France)</li>
+<li><a href="mailto:pierre.cochard@inria.fr">Pierre Cochard</a> -- Research engineer, Emeraude Team -- Inria Lyon (France)</li>
 </ul>
 <p>Feel free to contact us for any additional information !</p>
 <h2 id="requirements">Requirements</h2>
-<p>This workshop is intended for musicians, makers, engineers, computer  scientists, etc. Previous background in computer programming and sound synthesis/processing is preferred.</p>
+<p>This workshop is intended for musicians, makers, engineers, computer  scientists, etc. Previous background in computer programming and sound  synthesis/processing is preferred.</p>
 <h3 id="hardware">Hardware</h3>
-<p>Participants should bring their own laptop. The following elements - which can be purchased for them and added to the registration fee - are also required for the workshop: </p>
+<p>Participants should bring their own laptop. The following elements -  which can be purchased for them and added to the registration fee - are  also required for the workshop: </p>
 <ul>
 <li>a <strong>Digilent Zybo Z7-10 or Z7-20</strong> ARM/FPGA SoC Development Board</li>
 <li>an external 4.5 to 5.5V / 2.5A+ <strong>power source</strong></li>
@@ -108,7 +117,7 @@ Finally, we will demonstrate how to <strong>build and use a custom-made embedded
 <li>an <strong>USB-MIDI controller</strong>, with at least a few knobs and keys or pads.</li>
 </ul>
 <h3 id="software">Software</h3>
-<p>During the workshop, we will extensively use the <strong>AMD-Xilinx 2022.2 toolchain</strong>. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided <a href="syfala-installation/">here</a>:</p>
+<p>During the workshop, we will extensively use the <strong>AMD-Xilinx 2022.2 toolchain</strong>. If you have one of the operating systems listed below already installed on your machine, feel free to install the toolchain by yourself prior  to the workshop, following the instructions provided <a href="file:///home/pierre/Téléchargements/syfala-installation/">here</a>:</p>
 <ul>
 <li><strong>Ubuntu</strong> &gt;= 18.04</li>
 <li><strong>Linux Mint</strong> &gt;= 19 </li>
@@ -145,14 +154,17 @@ Finally, we will demonstrate how to <strong>build and use a custom-made embedded
     <div id="toc-collapse" class="navbar-collapse collapse card">
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a class="nav-link" href="#real-time-audio-dsp-on-fpga">Real-Time Audio DSP on FPGA</a></li>
-            <li class="nav-item main"><a class="nav-link" href="#covered-topics">Covered topics</a></li>
-            <li class="nav-item main"><a class="nav-link" href="#instructors">Instructors</a></li>
-            <li class="nav-item main"><a class="nav-link" href="#requirements">Requirements</a></li>
                 <li class="nav-item">
-                    <a href="#hardware" class="nav-link">Hardware</a>
+                    <a href="#description" class="nav-link">Description</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#software" class="nav-link">Software</a>
+                    <a href="#covered-topics" class="nav-link">Covered topics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#instructors" class="nav-link">Instructors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#requirements" class="nav-link">Requirements</a>
                 </li>
         </ul>
     </div>
@@ -240,6 +252,6 @@ Finally, we will demonstrate how to <strong>build and use a custom-made embedded
 </html>
 
 <!--
-MkDocs version : 1.4.2
-Build Date UTC : 2023-02-17 14:24:56.638407+00:00
+MkDocs version : 1.1.2
+Build Date UTC : 2023-04-18 09:03:46.308808+00:00
 -->
