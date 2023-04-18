@@ -69,3 +69,5 @@ For **any other Linux distributions**, but also *macOS* (**x86**), a container-i
 - **docker** (multi-platform, installation instructions are available [here](https://docs.docker.com/get-docker/))
 
 Unfortunately, **syfala containers** are at the moment **not working on ARM-based macOS** systems, and have **not been tested on Windows**.
+
+<img src="banner50_btm.png" alt="banner" style="zoom:50%;" />
