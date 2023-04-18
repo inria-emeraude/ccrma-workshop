@@ -2,11 +2,11 @@
 
 ### Hardware setup (Digilent **Zybo-Z7-10/20** boards)
 
-- [ ] Jumper **JP5** should be on *JTAG* 
-- [ ] **Power select** jumper should be on *USB*  
-- [ ] **Switches** SW0, SW1, SW2, SW3 should be **down**  
-- [ ] The **audio input** is **LINE IN** (blue), not MIC IN  
-- [ ] The **audio output** is the black **HPH OUT** jack  
+- [x] Jumper **JP5** should be on *JTAG* 
+- [x] **Power select** jumper should be on *USB*  
+- [x] **Switches** SW0, SW1, SW2, SW3 should be **down**  
+- [x] The **audio input** is **LINE IN** (blue), not MIC IN  
+- [x] The **audio output** is the black **HPH OUT** jack  
 
 ### Software
 

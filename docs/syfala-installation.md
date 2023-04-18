@@ -74,7 +74,3 @@ $syfala --help
 ```
 
 In order to use the Syfala toolchain to compile your first example, please report to the main [README](https://github.com/inria-emeraude/syfala/blob/main/README.md) file located in the repository's root directory.
-
-## Troubleshooting
-
-[...]

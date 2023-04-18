@@ -23,12 +23,12 @@ $ sudo echo "user:10000:65536" >> /etc/subgid
 
 ### Importing image
 
-The image is a directory with a specific structure, it is named `x2022-ubuntu1804` in our case.
+The image is a .tar file with a specific structure, it is named `syfala-debian.tar` in our case.
 
 ```shell
 $ cd /path/to/parent/directory/of/image
 # import image (make sure you have 100+gb of space left on your machine)
-$ podman pull oci:x2022-ubuntu1804
+$ podman load -i syfala-debian.tar
 ```
 
 ### Running container
@@ -36,7 +36,7 @@ $ podman pull oci:x2022-ubuntu1804
 #### without display
 
 ```shell
-$ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+$ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z syfala-debian /bin/bash 
 ```
 
 #### with display (required for Vivado/Vitis GUI, and for the Faust UART GUI application):
@@ -44,7 +44,7 @@ $ podman run -ti --user=syfala --network=host -v /dev/usb:/dev/usb -v /dev/ttyUS
 ```shell
 # first, allow X11 to share displays with local processes
 $ xhost +local:
-$ podman run -ti --user=syfala --network=host --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:z -v /dev/dri:/dev/dri:z -v /dev/bus/usb:/dev/bus/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z x2022-ubuntu1804 /bin/bash 
+$ podman run -ti --user=syfala --network=host --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:z -v /dev/dri:/dev/dri:z -v /dev/bus/usb:/dev/bus/usb -v /dev/ttyUSB1:/dev/ttyUSB1:z syfala-debian /bin/bash 
 # once inside the container, you'll have to run:
 $ xhost +
 # you can now open vitis_hls, vivado, etc.
@@ -66,9 +66,3 @@ you'll just have to add `--privileged` to the `podman run [...]` command.
 - `-v /dev/ttyUSB1:/dev/ttyUSB1` - needed in order to use the Faust GUI-UART application 
 - `x2022-ubuntu1804-ctn` - the name of the container you spawned from the image
 - `bash` - it will open a bash session when accessing the container, you can replace that by any binary that you want to start
-
-### TODOs:
-
-- [ ] macOS support through VNC (or XQuartz ?)
-- [ ] Windows support?
-

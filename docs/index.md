@@ -61,7 +61,7 @@ Participants should bring their own laptop. The following elements -  which can 
 
 ### Software
 
-During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have a **debian-based** operating system (Ubuntu, Linux Mint...) already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md)
+During the workshop, we will extensively use the **AMD-Xilinx 2022.2 toolchain**. If you have a **debian-based** operating system (Ubuntu, Linux Mint...) already installed on your machine, feel free to install the toolchain by yourself prior to the workshop, following the instructions provided [here](syfala-installation.md).
 
 For **any other Linux distributions**, but also *macOS* (**x86**), a container-image can be provided, it will **require the installation of one of these two softwares**: 
 
