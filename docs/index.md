@@ -18,7 +18,7 @@ However, programming them is very **complex** and out of reach to non-specialize
 
 **Faust** is a *functional programming language* for sound synthesis and audio processing with a strong focus on the  design of synthesizers, musical instruments, audio effects, etc.
 
-**Programming FPGAs with Faust** will allow you to explore the power of FPGAs while leveraging an *accessible programming language* that's widely used within the audio community.
+**Programming FPGAs with Faust** will allow to explore the power of FPGAs while leveraging an *accessible programming language* that's widely used within the audio community.
 
 Using a **Zybo ARM/FPGA SoC Development Board** which will be provided as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded FPGA board.
 
