@@ -1,24 +1,21 @@
-<img src="banner50p.png" alt="banner" style="zoom:50%;" />
+<img src="banner50p.png" alt="banner"  width="100%"/>
 
 # Real-Time Audio DSP on FPGA
 
-The goal of this *hands-on workshop* is to discover the **programming of FPGAs** for **real-time audio Digital Signal Processing (DSP)**.
-
-This will introduce **[Syfala](https://github.com/inria-emeraude/syfala)**: the first open-source audio DSP compiler targeting **FPGAs** using the **[Faust programming language](https://faust.grame.fr/)**.
-
-
+The goal of this *hands-on workshop* is to discover the **programming of FPGAs** for **real-time audio Digital Signal Processing (DSP) applications**.
+It focuses in particular on the **[Syfala](https://github.com/inria-emeraude/syfala)** toolchain: the first open-source audio DSP compiler targeting **FPGAs** using the **[Faust programming language](https://faust.grame.fr/)**.
 
 ## Description
 
 *Field-Programmable Gate Arrays* (FPGAs) provide unparalleled **audio latency** and **computational power**. This makes them a better fit for real-time audio processing than traditional CPUs for many applications.
 
-These embedded platforms can easily handle DSPs with *hundred of channels* while guaranteeing *very low latency*. This allows to design systems with unmatched performances (and unique features?) for *spatial audio, noise cancelling or active control of room acoustics*. For example, the combination of a large number of microphones and speakers with ultra-fast audio processing could permit to actively modify the acoustical properties of rehearsal spaces, concert halls, etc., to make them sound like a cathedral or any famous venue in the world.
+These embedded platforms can easily handle audio DSP programs with *hundreds of channels* while guaranteeing *very low latency*. This allows for the design of systems with unmatched performances and unique features for *spatial audio, noise cancelling or active control of room acoustics*. For example, the combination of a large number of microphones and speakers with ultra-low latency could allow us to actively modify the acoustical properties of rehearsal spaces, concert halls, etc.
 
-However, programming them is very **complex** and out of reach to non-specialized engineers as well as to most people in the audio community. That's where **Faust** comes to the rescue!
+However, programming FPGAs is very **complex** and out of reach to non-specialized engineers as well as to most people in the audio community. That's where **Faust** comes to the rescue!
 
-**Faust** is a *functional programming language* for sound synthesis and audio processing with a strong focus on the  design of synthesizers, musical instruments, audio effects, etc.
+**Faust** is a *functional programming language* for sound synthesis and audio processing with a strong focus on the design of synthesizers, musical instruments, audio effects, etc.
 
-**Programming FPGAs with Faust** will allow to explore the power of FPGAs while leveraging an *accessible programming language* that's widely used within the audio community.
+**Programming FPGAs with Faust** will allow us to explore the power of this platform while leveraging an *accessible programming language* that's widely used within the audio community.
 
 Using a **Zybo ARM/FPGA SoC Development Board** which will be provided as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded FPGA board.
 
@@ -26,12 +23,12 @@ Using a **Zybo ARM/FPGA SoC Development Board** which will be provided as part o
 
 During this course, as an **introduction to FPGAs**, we will first describe in details *the ins and outs of this platform*: how they work, their general purpose, and why they are a great fit for audio hardware and software development.
 
-We will go trough the understanding of **FPGA design flow** by programming some basic *VHDL functions* and intergate them to the *bloc design* with [Xilinx Vivado](https://www.xilinx.com/products/design-tools/vivado.html).
+We will go trough the understanding of **FPGA design flow** by programming some basic *VHDL functions* and intergate them to the *block design* with [Xilinx Vivado](https://www.xilinx.com/products/design-tools/vivado.html).
 
-Then, we will dive in audio development on FPGAs using Syfala to *compile* our first baremetal audio programs from regular **Faust DSP code**, and generate a graphical user interface (GUI) to control it in real-time.
+Then, we will dive into audio development on FPGAs using Syfala to *compile* our first baremetal audio programs from regular **Faust DSP code**, and generate a graphical user interface (GUI) to control it in real-time.
 This will go through an in-depth analysis of the **High Level Synthesis (HLS)** tools with *Vitis HLS*.
 
-Finally, we will demonstrate how to build and use a custom-made **embedded Linux** distribution directly on the board. This will allow us to use more advanced control protocols such as **MIDI**, Open Sound Control (**OSC**), **HTTP**, etc.
+Finally, we will demonstrate how to build and use a custom-made **embedded Linux** distribution directly on the board. This will allow us to use more advanced control protocols such as **MIDI**, Open Sound Control (**OSC**), **HTTPD**, etc.
 
 By the end of the workshop, you should have a good understanding of the possibilities that such a platform affords in the context of real-time audio processing.
 
@@ -40,7 +37,7 @@ By the end of the workshop, you should have a good understanding of the possibil
 - [Maxime Popoff](https://profiles.stanford.edu/maxime-popoff?releaseVersion=10.5.1) -- Computer Science and Embedded Systems PhD Student, Emeraude Team -- INSA Lyon (France)
 - [Pierre Cochard](mailto:pierre.cochard@inria.fr) -- Research engineer, Emeraude Team -- Inria Lyon (France)
 
-Feel free to contact us for any additional information !
+Feel free to contact us for any additional information!
 
 ## Requirements
 
@@ -48,8 +45,8 @@ This workshop is intended for engineers, computer scientists, musicians, makers,
 
 ### Hardware
 
-Participants can bring their own laptop or can use those of CCRMA.
-The following elements will be included in tha lab kit:
+Participants must bring their own laptop.
+The following elements will be included in the lab kit:
 
 - **Digilent Zybo Z7-10** ARM/FPGA SoC Development Board
 - External 5V 2.5A+ power source
@@ -65,7 +62,7 @@ For **any other Linux distributions**, but also *macOS* (**x86**), a container-i
 - **podman** (multi-platform, installation instructions are available [here](https://podman.io/getting-started/installation))
 - **docker** (multi-platform, installation instructions are available [here](https://docs.docker.com/get-docker/))
 
-Unfortunately, **syfala containers** are at the moment **not working on ARM-based macOS** systems, and have **not been tested on Windows**.
+Unfortunately, **Syfala containers** are at the moment **not working on ARM-based macOS** systems, and have **not been tested on Windows**.
 
 
 
@@ -73,4 +70,4 @@ Unfortunately, **syfala containers** are at the moment **not working on ARM-base
 
 ---
 
-<img src="banner50_btm.png" alt="banner" style="zoom:50%;" />
+<img src="banner50_btm.png" alt="banner" width="100%" />

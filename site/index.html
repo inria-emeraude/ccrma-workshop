@@ -79,35 +79,35 @@
 </nav>
 
 
-<p><img src="banner50p.png" alt="banner" style="zoom:50%;" /></p>
+<p><img src="banner50p.png" alt="banner"  width="100%"/></p>
 <h1 id="real-time-audio-dsp-on-fpga">Real-Time Audio DSP on FPGA</h1>
-<p>The goal of this <em>hands-on workshop</em> is to discover the <strong>programming of FPGAs</strong> for <strong>real-time audio Digital Signal Processing (DSP)</strong>.</p>
-<p>This will introduce <strong><a href="https://github.com/inria-emeraude/syfala">Syfala</a></strong>: the first open-source audio DSP compiler targeting <strong>FPGAs</strong> using the <strong><a href="https://faust.grame.fr/">Faust programming language</a></strong>.</p>
+<p>The goal of this <em>hands-on workshop</em> is to discover the <strong>programming of FPGAs</strong> for <strong>real-time audio Digital Signal Processing (DSP) applications</strong>.
+It focuses in particular on the <strong><a href="https://github.com/inria-emeraude/syfala">Syfala</a></strong> toolchain: the first open-source audio DSP compiler targeting <strong>FPGAs</strong> using the <strong><a href="https://faust.grame.fr/">Faust programming language</a></strong>.</p>
 <h2 id="description">Description</h2>
 <p><em>Field-Programmable Gate Arrays</em> (FPGAs) provide unparalleled <strong>audio latency</strong> and <strong>computational power</strong>. This makes them a better fit for real-time audio processing than traditional CPUs for many applications.</p>
-<p>These embedded platforms can easily handle DSPs with <em>hundred of channels</em> while guaranteeing <em>very low latency</em>. This allows to design systems with unmatched performances (and unique features?) for <em>spatial audio, noise cancelling or active control of room acoustics</em>. For example, the combination of a large number of microphones and speakers with ultra-fast audio processing could permit to actively modify the acoustical properties of rehearsal spaces, concert halls, etc., to make them sound like a cathedral or any famous venue in the world.</p>
-<p>However, programming them is very <strong>complex</strong> and out of reach to non-specialized engineers as well as to most people in the audio community. That's where <strong>Faust</strong> comes to the rescue!</p>
-<p><strong>Faust</strong> is a <em>functional programming language</em> for sound synthesis and audio processing with a strong focus on the  design of synthesizers, musical instruments, audio effects, etc.</p>
-<p><strong>Programming FPGAs with Faust</strong> will allow you to explore the power of FPGAs while leveraging an <em>accessible programming language</em> that's widely used within the audio community.</p>
+<p>These embedded platforms can easily handle audio DSP programs with <em>hundreds of channels</em> while guaranteeing <em>very low latency</em>. This allows for the design of systems with unmatched performances and unique features for <em>spatial audio, noise cancelling or active control of room acoustics</em>. For example, the combination of a large number of microphones and speakers with ultra-low latency could allow us to actively modify the acoustical properties of rehearsal spaces, concert halls, etc.</p>
+<p>However, programming FPGAs is very <strong>complex</strong> and out of reach to non-specialized engineers as well as to most people in the audio community. That's where <strong>Faust</strong> comes to the rescue!</p>
+<p><strong>Faust</strong> is a <em>functional programming language</em> for sound synthesis and audio processing with a strong focus on the design of synthesizers, musical instruments, audio effects, etc.</p>
+<p><strong>Programming FPGAs with Faust</strong> will allow us to explore the power of this platform while leveraging an <em>accessible programming language</em> that's widely used within the audio community.</p>
 <p>Using a <strong>Zybo ARM/FPGA SoC Development Board</strong> which will be provided as part of a lab kit, you will learn how to easily program your own Faust audio signal processing applications on an embedded FPGA board.</p>
 <h2 id="covered-topics">Covered topics</h2>
 <p>During this course, as an <strong>introduction to FPGAs</strong>, we will first describe in details <em>the ins and outs of this platform</em>: how they work, their general purpose, and why they are a great fit for audio hardware and software development.</p>
-<p>We will go trough the understanding of <strong>FPGA design flow</strong> by programming some basic <em>VHDL functions</em> and intergate them to the <em>bloc design</em> with <a href="https://www.xilinx.com/products/design-tools/vivado.html">Xilinx Vivado</a>.</p>
-<p>Then, we will dive in audio development on FPGAs using Syfala to <em>compile</em> our first baremetal audio programs from regular <strong>Faust DSP code</strong>, and generate a graphical user interface (GUI) to control it in real-time.
+<p>We will go trough the understanding of <strong>FPGA design flow</strong> by programming some basic <em>VHDL functions</em> and intergate them to the <em>block design</em> with <a href="https://www.xilinx.com/products/design-tools/vivado.html">Xilinx Vivado</a>.</p>
+<p>Then, we will dive into audio development on FPGAs using Syfala to <em>compile</em> our first baremetal audio programs from regular <strong>Faust DSP code</strong>, and generate a graphical user interface (GUI) to control it in real-time.
 This will go through an in-depth analysis of the <strong>High Level Synthesis (HLS)</strong> tools with <em>Vitis HLS</em>.</p>
-<p>Finally, we will demonstrate how to build and use a custom-made <strong>embedded Linux</strong> distribution directly on the board. This will allow us to use more advanced control protocols such as <strong>MIDI</strong>, Open Sound Control (<strong>OSC</strong>), <strong>HTTP</strong>, etc.</p>
+<p>Finally, we will demonstrate how to build and use a custom-made <strong>embedded Linux</strong> distribution directly on the board. This will allow us to use more advanced control protocols such as <strong>MIDI</strong>, Open Sound Control (<strong>OSC</strong>), <strong>HTTPD</strong>, etc.</p>
 <p>By the end of the workshop, you should have a good understanding of the possibilities that such a platform affords in the context of real-time audio processing.</p>
 <h2 id="instructors">Instructors</h2>
 <ul>
 <li><a href="https://profiles.stanford.edu/maxime-popoff?releaseVersion=10.5.1">Maxime Popoff</a> -- Computer Science and Embedded Systems PhD Student, Emeraude Team -- INSA Lyon (France)</li>
 <li><a href="mailto:pierre.cochard@inria.fr">Pierre Cochard</a> -- Research engineer, Emeraude Team -- Inria Lyon (France)</li>
 </ul>
-<p>Feel free to contact us for any additional information !</p>
+<p>Feel free to contact us for any additional information!</p>
 <h2 id="requirements">Requirements</h2>
 <p>This workshop is intended for engineers, computer scientists, musicians, makers, etc. Previous background in computer programming and sound synthesis/processing is preferred. No previous background in FPGA programming is needed.</p>
 <h3 id="hardware">Hardware</h3>
-<p>Participants can bring their own laptop or can use those of CCRMA.
-The following elements will be included in tha lab kit:</p>
+<p>Participants must bring their own laptop.
+The following elements will be included in the lab kit:</p>
 <ul>
 <li><strong>Digilent Zybo Z7-10</strong> ARM/FPGA SoC Development Board</li>
 <li>External 5V 2.5A+ power source</li>
@@ -121,10 +121,10 @@ The following elements will be included in tha lab kit:</p>
 <li><strong>podman</strong> (multi-platform, installation instructions are available <a href="https://podman.io/getting-started/installation">here</a>)</li>
 <li><strong>docker</strong> (multi-platform, installation instructions are available <a href="https://docs.docker.com/get-docker/">here</a>)</li>
 </ul>
-<p>Unfortunately, <strong>syfala containers</strong> are at the moment <strong>not working on ARM-based macOS</strong> systems, and have <strong>not been tested on Windows</strong>.</p>
+<p>Unfortunately, <strong>Syfala containers</strong> are at the moment <strong>not working on ARM-based macOS</strong> systems, and have <strong>not been tested on Windows</strong>.</p>
 <p><a href="resources/"><strong>Resources</strong></a></p>
 <hr />
-<p><img src="banner50_btm.png" alt="banner" style="zoom:50%;" /></p>
+<p><img src="banner50_btm.png" alt="banner" width="100%" /></p>
 
 <ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
   <li class="last-updated-holder displayDate loading">
@@ -251,5 +251,5 @@ The following elements will be included in tha lab kit:</p>
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2023-04-19 01:05:01.354568+00:00
+Build Date UTC : 2023-04-19 22:02:24.473491+00:00
 -->
