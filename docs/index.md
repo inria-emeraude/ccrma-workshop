@@ -69,5 +69,12 @@ Unfortunately, **Syfala containers** are at the moment **not working on ARM-base
 [**Resources**](resources.md)
 
 ---
-
 <img src="banner50_btm.png" alt="banner" width="100%" />
+<center>
+<p>
+    <a href="https://www.inria.fr"><img src="logo/inria-logo.png" width="20%"></a>
+    <a href="https://www.grame.fr"><img src="logo/grame-logo.svg" width="20%"></a>
+    <a href="https://www.insa-lyon.fr/en/"><img src="logo/logoInsa.png" width="20%"></a>
+    <a href="https://ccrma.stanford.edu"><img src="logo/ccrmaLogo.svg" width="20%"></a>
+</p>
+</center>
