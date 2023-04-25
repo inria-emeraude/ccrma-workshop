@@ -1,6 +1,9 @@
 <img src="banner50p.png" alt="banner"  width="100%"/>
 
 # Real-Time Audio DSP on FPGA
+<p style="text-align:center;">
+<button type="button"  onclick="window.location.href='https://www.eventbrite.com/e/real-time-audio-dsp-on-fpga-tickets-616586997307?aff=ebdsoporgprofile';">  Click Here to REGISTER  </button>
+</p>
 
 The goal of this *hands-on workshop* is to discover the **programming of FPGAs** for **real-time audio Digital Signal Processing (DSP) applications**.
 It focuses in particular on the **[Syfala](https://github.com/inria-emeraude/syfala)** toolchain: the first open-source audio DSP compiler targeting **FPGAs** using the **[Faust programming language](https://faust.grame.fr/)**.
@@ -65,8 +68,16 @@ For **any other Linux distributions**, but also *macOS* (**x86**), a container-i
 Unfortunately, **Syfala containers** are at the moment **not working on ARM-based macOS** systems, and have **not been tested on Windows**.
 
 
+###[Resources](resources.md)
 
-[**Resources**](resources.md)
+---
+
+## Registrations
+
+[Follow this link](https://www.eventbrite.com/e/real-time-audio-dsp-on-fpga-tickets-616586997307?aff=ebdsoporgprofile) to register.
+**Registrations are open until May 15, 2023.**
+
+PLEASE NOTE: This workshop is subject to cancellation if there is not sufficient enrollment by May 15, 2023.
 
 ---
 <img src="banner50_btm.png" alt="banner" width="100%" />
