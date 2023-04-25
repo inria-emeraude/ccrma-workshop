@@ -1,4 +1,4 @@
-<img src="banner50p.png" alt="banner"  width="100%"/>
+<img src="banner50p.jpg" alt="banner"  width="100%"/>
 
 # Real-Time Audio DSP on FPGA
 <p style="text-align:center;">
@@ -80,7 +80,7 @@ Unfortunately, **Syfala containers** are at the moment **not working on ARM-base
 PLEASE NOTE: This workshop is subject to cancellation if there is not sufficient enrollment by May 15, 2023.
 
 ---
-<img src="banner50_btm.png" alt="banner" width="100%" />
+<img src="banner50_btm.jpg" alt="banner" width="100%" />
 <center>
 <p>
     <a href="https://www.inria.fr"><img src="logo/inria-logo.png" width="20%"></a>
